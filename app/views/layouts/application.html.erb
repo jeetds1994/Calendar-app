@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title>MckinseyChallenge</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<style>
+    .simple-calendar td {
+      height: 130px;
+      width: 200px;
+      vertical-align: top;
+      border-style: solid;
+      padding: 3px;
+    }
+    .simple-calendar th {
+      background-color: #64b5f6;
+      border-style: solid;
+      text-align: center;
+      margin: auto;
+    }
+    .calendar-heading {
+      text-align: center;
+      font-weight: bold; font-size: 25px; }
+    .calendar-title {
+      font-size: 50px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+      .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+        color: #0089ec;
+        margin-right: 24px;
+        transition: color .3s ease;
+        text-transform: uppercase;
+      }
+
+      .popuptext {
+        visibility: hidden;
+        font-size: 30px;
+        color: gray;
+      }
+
+      .events{
+        font-size: 30px;
+        border: solid;
+      }
+
+</style>
+  <!-- import jquery and materialize-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

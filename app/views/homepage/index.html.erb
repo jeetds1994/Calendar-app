@@ -1,0 +1,49 @@
+<div>
+
+  <%= form_for @event do |f| %>
+    <%= f.label :start %>:
+    <%= f.datetime_select :start %><br />
+
+    <%= f.label :end %>:
+    <%= f.datetime_select :end %><br />
+
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :description %>:
+    <%= f.text_field :description %><br />
+
+    <%= f.submit %>
+  <% end %>
+
+  <p>Example: 10/20/2017, 2:10 pm</p>
+
+  <%= form_for @event do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :description %>:
+    <%= f.text_field :description %><br />
+
+    <%= f.submit %>
+  <% end %>
+
+
+  <div class="row">
+    <div class="card blue-grey lighten-5 col s12">
+      <div class="card-content">
+      <%= month_calendar do |date| %>
+        <%= date %>
+        <% @events.each do |event|%>
+          <%if event["start"].to_date == date.to_date %>
+            <p class="events" id="<%=event["id"]%>"data-message="<%=event["description"]%>"
+            </p> <%= event["title"] %> </p>
+              <span class="popuptext" id="span<%=event["id"]%>"><%=event["description"]%></span>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+
+<div>
